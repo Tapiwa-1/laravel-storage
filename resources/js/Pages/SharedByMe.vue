@@ -66,6 +66,13 @@ import DeleteForeverButton from "@/Components/app/DeleteForeverButton.vue";
 
 // Uses
 
+
+// Props & Emit
+const props = defineProps({
+    files: Object,
+    folder: Object,
+    ancestors: Object
+})
 // Refs
 const allSelected = ref(false);
 const selected = ref({});
@@ -76,12 +83,7 @@ const allFiles = ref({
     next: props.files.links.next
 })
 
-// Props & Emit
-const props = defineProps({
-    files: Object,
-    folder: Object,
-    ancestors: Object
-})
+
 
 // Computed
 const selectedIds = computed(() => Object.entries(selected.value).filter(a => a[1]).map(a => a[0]))

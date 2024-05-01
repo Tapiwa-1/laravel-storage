@@ -135,6 +135,14 @@ import {all} from "axios";
 // Uses
 const page = usePage();
 
+// Props & Emit
+const props = defineProps({
+    files: Object,
+    folder: Object,
+    ancestors: Object
+})
+
+
 // Refs
 const allSelected = ref(false);
 const onlyFavourites = ref(false);
@@ -148,12 +156,6 @@ const allFiles = ref({
 })
 let params = null;
 
-// Props & Emit
-const props = defineProps({
-    files: Object,
-    folder: Object,
-    ancestors: Object
-})
 
 // Computed
 const selectedIds = computed(() => Object.entries(selected.value).filter(a => a[1]).map(a => a[0]))

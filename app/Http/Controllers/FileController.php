@@ -231,7 +231,7 @@ class FileController extends Controller
 
         $all = $data['all'] ?? false;
         $ids = $data['ids'] ?? [];
-
+        // dd(1);
         if (!$all && empty($ids)) {
             return [
                 'message' => 'Please select files to download'

@@ -67,7 +67,11 @@ return [
             'transport' => 'sendmail',
             'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
         ],
-
+         // start mailtrap transport
+            'mailtrap' => [
+                'transport' => 'mailtrap'
+            ],
+            // end mailtrap transport
         'log' => [
             'transport' => 'log',
             'channel' => env('MAIL_LOG_CHANNEL'),

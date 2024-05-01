@@ -18,6 +18,11 @@ class File extends Model
 {
     use HasFactory, HasCreatorAndUpdater, NodeTrait, SoftDeletes;
 
+    protected $casts = [
+        'name'=>'encrypted',
+        'path'=>'encrypted'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
